@@ -88,4 +88,46 @@ git pull origin main --rebase --allow-unrelated-histories
 git push -u origin main
 ```
 
-이제 GitHub 리포지토리에서 업로드된 파일을 확인할 수 있습니다.
+이제 GitHub 리포지토리에서 업로드된 파일을 확인할 수 있습니다。
+
+## 7. Podman을 이용한 배포 (Ubuntu)
+
+이 섹션에서는 Ubuntu Linux 환경에서 Podman을 사용하여 애플리케이션을 배포하는 방법을 안내합니다.
+
+### 전제 조건
+
+*   Ubuntu Linux 환경
+*   Podman 및 `podman-compose` 설치 완료
+
+### 배포 절차
+
+1.  **GitHub에서 소스 코드 복제**
+
+    ```bash
+    git clone https://github.com/yblmmen/rag.git
+    cd rag
+    ```
+
+2.  **Podman을 사용하여 컨테이너 빌드 및 실행**
+
+    `podman-compose`를 사용하여 `docker-compose.yaml` 파일에 정의된 서비스를 빌드하고 실행합니다.
+
+    ```bash
+    podman-compose up -d --build
+    ```
+
+3.  **애플리케이션 확인**
+
+    배포가 완료되면 웹 브라우저에서 `http://<서버 IP>:80`으로 접속하여 애플리케이션을 확인할 수 있습니다.
+
+4.  **실행 중인 컨테이너 확인**
+
+    ```bash
+    podman ps
+    ```
+
+5.  **컨테이너 로그 확인**
+
+    ```bash
+    podman logs rag_app_container
+    ```

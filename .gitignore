@@ -1,0 +1,35 @@
+# Environments
+.env
+
+# Credentials
+credentials.json
+token.json
+token.pickle
+secret.sh
+
+# Databases
+*.db
+*.sqlite
+faiss_index.bin
+faiss_metadata.pkl
+network_faiss_index/
+
+# Data & Uploads
+Uploads/
+network_raw_data.txt
+log.txt
+command.txt
+*.pptx
+innerinfo.jpg
+rag.tar
+PLOS-PASK-v2.2.6.3.3_os_hash.txt
+시설관리공단_FWLB_sample config.txt
+
+# Python caches
+__pycache__/
+*.pyc
+
+# IDE / OS files
+.idea/
+.vscode/
+.DS_Store

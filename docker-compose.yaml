@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: rag_app_container
+    ports:
+      - "80:8501"
+    volumes:
+      - .:/app
+      - ~/.ssh:/root/.ssh:ro
+    restart: unless-stopped
+
+  
